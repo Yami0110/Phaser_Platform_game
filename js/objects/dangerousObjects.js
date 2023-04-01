@@ -37,7 +37,7 @@ class Saw {
     }
 
     move() {
-        // zabezpečovanie posúvanie a prepínanie smeru posúvania jednotlivých píl
+        // zabezpečovanie posúvania a prepínania smeru pohybu jednotlivých píl
         for (const saw of this.saws.children.entries) {
             if (saw.body.blocked.right || saw.body.touching.right) saw.direction = "left";
             if (saw.body.blocked.left || saw.body.touching.left) saw.direction = "right";

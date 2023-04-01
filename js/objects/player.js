@@ -19,7 +19,7 @@ class Player {
     }
 
     move() {
-        // nastavenie pohybu a animácie hráča na základe vstupov
+        // zabezpečenie pohybu a animácii hráčskej postavy na základe vstupov
         if (this.input.right.isDown) {
             this.sprite.setVelocityX(100).setFlip(false);
             this.sprite.anims.play("playerRun", true);
@@ -30,7 +30,7 @@ class Player {
             this.sprite.setVelocityX(0);
             this.sprite.anims.play("playerIdle", true);
         }
-        // nastavenie skákania a spustenia zvukového efektu
+        // zabezpečenie skákania a spustenia zvukového efektu
         if (this.input.space.isDown && this.sprite.body.onFloor()) {
             this.sprite.setVelocityY(-320);
             this.scene.sound.add("jumpSound").play();

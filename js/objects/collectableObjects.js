@@ -21,14 +21,14 @@ class Coin {
     }
 
     animation() {
-        // prehranie animácií pre každý objekt skupiny coins
+        // prehrávanie animácií pre každý objekt skupiny coins
         for (const coin of this.coins.children.entries) {
             coin.play("coinRotation", true);
         }
     }
 
     collision(object) {
-        /* volanie funkcie collect() pri kolízií medzi mincou
+        /* volanie funkcie collect() pri kolízii medzi mincou
            a objektom, ktorý je zadaný ako parameter tejto funkcie */
         this.scene.physics.add.overlap(this.coins, object, this.collect, null, this);
         return this;
@@ -44,7 +44,7 @@ class Coin {
         }
         // prehranie zvukového efektu
         this.scene.sound.add("coinPickUpSound").play();
-        // aktualizácia aktuálneho skóre v registri
+        // aktualizácia skóre v registri
         this.score = this.scene.registry.get("score");
         this.score += 10;
         this.scene.registry.set("score", this.score);
@@ -86,7 +86,7 @@ class Apple {
             }
         }
         this.scene.sound.add("applePickUp").play();
-        /* aktualizácia aktuálneho života, ktorá sa vykoná len v prípade,
+        /* aktualizácia života v registri, ktorá sa vykoná len v prípade,
            ak počet životov je menší ako 3 */
         this.lives = this.scene.registry.get("lives");
         if (this.lives < 3) {

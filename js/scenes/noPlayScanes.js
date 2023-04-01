@@ -11,6 +11,7 @@ class GameTitle extends Phaser.Scene {
         // vloženie obrázka na scénu
         this.add.image(this.width / 2, this.height / 2, "background").setOrigin(0.5).setScale(1.5);
         this.add.image(this.width / 2, this.height / 2, "gameTitle");
+        // vloženie bitmapového textu na scénu
         this.add.bitmapText(this.width / 2, this.height - 80, "galvanic", "PRESS ENTER", fontSizes[1]).setTint(0x00994D).setOrigin(0.5);
         // vytvorenie objektu pre získavanie vstupu z tlačidla ENTER
         this.keyEnter = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
